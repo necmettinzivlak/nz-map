@@ -31,9 +31,10 @@ import AddLocationIcon from "@mui/icons-material/AddLocation";
 import CloseIcon from "@mui/icons-material/Close";
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import TimelapseIcon from '@mui/icons-material/Timelapse';
-import StraightIcon from '@mui/icons-material/Straight';
+import RouteIcon from '@mui/icons-material/Route';
 import DragIndicatorIcon from '@mui/icons-material/DragIndicator';
 import PlaceIcon from '@mui/icons-material/Place';
+import StraightIcon from '@mui/icons-material/Straight';
 
 // Theme oluşturalım
 const theme = createTheme({
@@ -439,7 +440,7 @@ function Map() {
         {/* Sidebar */}
         <Paper
           elevation={3}
-          className={`md:w-[30vw] lg:w-[25vw] w-full flex flex-col ${
+          className={`md:w-[30vw] lg:w-[25vw] w-full flex flex-col p-2 ${
             isSidebarOpen ? "" : "hidden"
           }`}
           sx={{
@@ -464,22 +465,17 @@ function Map() {
               <Typography variant="h6" sx={{ fontSize: '1rem', fontWeight: 600 }}>
                 Koordinatlar
               </Typography>
-              <IconButton
-                size="small"
-                onClick={handleCopyCoordinates}
-                sx={{ padding: 0.5 }}
-              >
-                <ContentCopyIcon fontSize="small" />
-              </IconButton>
+             
             </Box>
 
             {/* Rota Bilgileri */}
             {routeInfo && (
               <Box sx={{ 
-                display: 'flex', 
-                gap: 2, 
-                mt: 2,
-                p: 2.5,
+                display: 'flex',
+                flexDirection: { xs: 'column',  md:'column', lg: 'column', xl: 'row' },
+                gap: 1, 
+                mt: 1,
+                p: { xs: 0.5, sm: 1 },
               }}>
                 {/* Mesafe Kutusu - Mavi tonları */}
                 <Box sx={{ 
@@ -492,6 +488,7 @@ function Map() {
                   transition: 'all 0.2s',
                   bgcolor: '#eff6ff',
                   border: '1px solid rgba(59, 130, 246, 0.08)',
+                  width: '100%',
                   '&:hover': {
                     bgcolor: '#dbeafe',
                     transform: 'translateY(-1px)',
@@ -499,7 +496,7 @@ function Map() {
                   }
                 }}>
                   <Box sx={{
-                    width: 40,
+                    minWidth: 40,
                     height: 40,
                     borderRadius: '12px',
                     background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
@@ -508,27 +505,30 @@ function Map() {
                     justifyContent: 'center',
                     boxShadow: '0 2px 4px rgba(59, 130, 246, 0.2)'
                   }}>
-                    <StraightIcon sx={{ 
+                    <RouteIcon sx={{ 
                       color: '#ffffff', 
                       transform: 'rotate(90deg)',
                       fontSize: 24
                     }} />
                   </Box>
-                  <Box>
+                  <Box sx={{ flex: 1, minWidth: 0 }}>
                     <Typography variant="caption" sx={{ 
                       fontWeight: 500,
                       fontSize: '0.75rem',
                       letterSpacing: '0.5px',
                       textTransform: 'uppercase',
-                      color: '#3b82f6'
+                      color: '#3b82f6',
+                      display: 'block',
+                      whiteSpace: 'nowrap'
                     }}>
-                      Toplam Mesafe
+                      TOPLAM MESAFE
                     </Typography>
                     <Typography variant="h6" sx={{ 
                       fontWeight: 600, 
                       color: '#1e40af', 
-                      fontSize: '1.25rem',
-                      letterSpacing: '-0.5px'
+                      fontSize: { xs: '1.1rem', sm: '1.25rem' },
+                      letterSpacing: '-0.5px',
+                      whiteSpace: 'nowrap'
                     }}>
                       {routeInfo.distance} km
                     </Typography>
@@ -546,6 +546,7 @@ function Map() {
                   transition: 'all 0.2s',
                   bgcolor: '#f0fdf4',
                   border: '1px solid rgba(34, 197, 94, 0.08)',
+                  width: '100%',
                   '&:hover': {
                     bgcolor: '#dcfce7',
                     transform: 'translateY(-1px)',
@@ -553,7 +554,7 @@ function Map() {
                   }
                 }}>
                   <Box sx={{
-                    width: 40,
+                    minWidth: 40,
                     height: 40,
                     borderRadius: '12px',
                     background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',
@@ -567,21 +568,24 @@ function Map() {
                       fontSize: 24
                     }} />
                   </Box>
-                  <Box>
+                  <Box sx={{ flex: 1, minWidth: 0 }}>
                     <Typography variant="caption" sx={{ 
                       fontWeight: 500,
                       fontSize: '0.75rem',
                       letterSpacing: '0.5px',
                       textTransform: 'uppercase',
-                      color: '#22c55e'
+                      color: '#22c55e',
+                      display: 'block',
+                      whiteSpace: 'nowrap'
                     }}>
-                      Tahmini Süre
+                      TAHMİNİ SÜRE
                     </Typography>
                     <Typography variant="h6" sx={{ 
                       fontWeight: 600, 
                       color: '#166534', 
-                      fontSize: '1.25rem',
-                      letterSpacing: '-0.5px'
+                      fontSize: { xs: '1.1rem', sm: '1.25rem' },
+                      letterSpacing: '-0.5px',
+                      whiteSpace: 'nowrap'
                     }}>
                       {routeInfo.duration} dk
                     </Typography>
@@ -597,7 +601,6 @@ function Map() {
             onSubmit={handleAddCoordinate}
             sx={{
               p: 1.5,
-              borderBottom: 1,
               borderColor: "divider",
             }}
           >
