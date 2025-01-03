@@ -63,6 +63,10 @@ Server:
 
 ## Kullanım
 
+<img width="1510" alt="Screenshot 2025-01-04 at 00 11 30" src="https://github.com/user-attachments/assets/2d914108-e62e-4e80-a302-d25ef8246569" />
+
+
+
 ### 1. Koordinat Ekleme
 - **Sağ Tık ile**: Haritada istediğiniz noktaya sağ tıklayıp "Güzergaha Ekle" seçeneğini kullanın
 - **Manuel Giriş**: Soldaki panelde koordinat giriş formunu kullanın
