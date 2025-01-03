@@ -479,51 +479,110 @@ function Map() {
                 display: 'flex', 
                 gap: 2, 
                 mt: 2,
-                p: 2,
-                bgcolor: '#f8fafc',
-                borderRadius: 2,
-                boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+                p: 2.5,
               }}>
+                {/* Mesafe Kutusu - Mavi tonları */}
                 <Box sx={{ 
                   flex: 1,
                   display: 'flex',
                   alignItems: 'center',
-                  gap: 1.5,
-                  p: 1,
-                  borderRadius: 1,
+                  gap: 2,
+                  p: 1.5,
+                  borderRadius: 1.5,
                   transition: 'all 0.2s',
+                  bgcolor: '#eff6ff',
+                  border: '1px solid rgba(59, 130, 246, 0.08)',
                   '&:hover': {
-                    bgcolor: '#f1f5f9'
+                    bgcolor: '#dbeafe',
+                    transform: 'translateY(-1px)',
+                    boxShadow: '0 4px 6px -1px rgba(59, 130, 246, 0.1)'
                   }
                 }}>
-                  <StraightIcon sx={{ color: '#1976d2', transform: 'rotate(90deg)' }} />
+                  <Box sx={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: '12px',
+                    background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 2px 4px rgba(59, 130, 246, 0.2)'
+                  }}>
+                    <StraightIcon sx={{ 
+                      color: '#ffffff', 
+                      transform: 'rotate(90deg)',
+                      fontSize: 24
+                    }} />
+                  </Box>
                   <Box>
-                    <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 500 }}>
+                    <Typography variant="caption" sx={{ 
+                      fontWeight: 500,
+                      fontSize: '0.75rem',
+                      letterSpacing: '0.5px',
+                      textTransform: 'uppercase',
+                      color: '#3b82f6'
+                    }}>
                       Toplam Mesafe
                     </Typography>
-                    <Typography variant="h6" sx={{ fontWeight: 600, color: '#1976d2', fontSize: '1.1rem' }}>
+                    <Typography variant="h6" sx={{ 
+                      fontWeight: 600, 
+                      color: '#1e40af', 
+                      fontSize: '1.25rem',
+                      letterSpacing: '-0.5px'
+                    }}>
                       {routeInfo.distance} km
                     </Typography>
                   </Box>
                 </Box>
+
+                {/* Süre Kutusu - Yeşil tonları */}
                 <Box sx={{ 
                   flex: 1,
                   display: 'flex',
                   alignItems: 'center',
-                  gap: 1.5,
-                  p: 1,
-                  borderRadius: 1,
+                  gap: 2,
+                  p: 1.5,
+                  borderRadius: 1.5,
                   transition: 'all 0.2s',
+                  bgcolor: '#f0fdf4',
+                  border: '1px solid rgba(34, 197, 94, 0.08)',
                   '&:hover': {
-                    bgcolor: '#f1f5f9'
+                    bgcolor: '#dcfce7',
+                    transform: 'translateY(-1px)',
+                    boxShadow: '0 4px 6px -1px rgba(34, 197, 94, 0.1)'
                   }
                 }}>
-                  <TimelapseIcon sx={{ color: '#1976d2' }} />
+                  <Box sx={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: '12px',
+                    background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 2px 4px rgba(34, 197, 94, 0.2)'
+                  }}>
+                    <TimelapseIcon sx={{ 
+                      color: '#ffffff',
+                      fontSize: 24
+                    }} />
+                  </Box>
                   <Box>
-                    <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 500 }}>
+                    <Typography variant="caption" sx={{ 
+                      fontWeight: 500,
+                      fontSize: '0.75rem',
+                      letterSpacing: '0.5px',
+                      textTransform: 'uppercase',
+                      color: '#22c55e'
+                    }}>
                       Tahmini Süre
                     </Typography>
-                    <Typography variant="h6" sx={{ fontWeight: 600, color: '#1976d2', fontSize: '1.1rem' }}>
+                    <Typography variant="h6" sx={{ 
+                      fontWeight: 600, 
+                      color: '#166534', 
+                      fontSize: '1.25rem',
+                      letterSpacing: '-0.5px'
+                    }}>
                       {routeInfo.duration} dk
                     </Typography>
                   </Box>
