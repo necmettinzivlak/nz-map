@@ -1,7 +1,7 @@
 Tamam, ana dizinde `README.md` dosyasını oluşturup içeriğini yazalım:
 
 ```markdown
-# YERLEM MAP
+# NZ MAP
 
 Yerlem Map, koordinatlar arasında rota oluşturmanızı ve yönetmenizi sağlayan bir haritalama uygulamasıdır.
 
